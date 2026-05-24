@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
-from flask_sqlalchemy import SQLAlchemy 
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy import and_
 from sqlalchemy import or_
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
@@ -13,7 +14,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), nullable=False)
+    password = db.Column(db.String(255), nullable=False) # Aumentado para hashes
 
 @app.route('/')
 def index():
@@ -39,13 +40,13 @@ def login():
         email = request.form['email']
         password = request.form['contrasena']
 
-        try:
-            user = User.query.filter(or_(User.username == email, User.email == email),
-                                      User.password == password).one()
+        user = User.query.filter(or_(User.username == email, User.email == email)).first()
 
+        if user and check_password_hash(user.password, password):
             session['user_id'] = user.id
+            session['username'] = user.username
             return redirect(url_for('dashboard'))
-        except NoResultFound:
+        else:
             flash('Credenciales incorrectas. Por favor, inténtalo de nuevo.', 'error')
 
     return render_template('login.html')
@@ -71,12 +72,14 @@ def signup():
         email = request.form['email']
         password = request.form['password']
 
-        new_user = User(username=username, email=email, password=password)
+        hashed_password = generate_password_hash(password)
+
+        new_user = User(username=username, email=email, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
 
         # Agrega esta línea para imprimir información sobre el nuevo usuario
-        print(f'Nuevo usuario registrado: {username}, {email}, {password}')
+        print(f'Nuevo usuario registrado: {username}, {email}')
 
         return redirect(url_for('index'))
 
