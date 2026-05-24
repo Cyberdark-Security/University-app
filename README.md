@@ -1,63 +1,76 @@
-# 🏥 Hospital Local de Puerto López - Gestión de Citas Médicas
+<div align="center">
 
-![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+# 🏥 Hospital Local de Puerto López
+### *Sistema de Gestión de Citas Médicas*
 
-## 📋 Propósito del Proyecto
+[![Flask](https://img.shields.io/badge/Flask-3.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-3.0+-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
-Este repositorio contiene una plataforma digital diseñada para modernizar y optimizar la **gestión de citas médicas** en el Hospital Local de Puerto López. El objetivo principal es proporcionar a los ciudadanos una herramienta accesible e intuitiva que les permita agendar consultas, gestionar su historial de citas y conectar de manera eficiente con los servicios de salud locales.
+**Una solución digital integral para la salud de nuestra comunidad.**
+
+[Propósito](#-propósito) • [Características](#-características-principales) • [Tecnologías](#-tecnologías-utilizadas) • [Instalación](#-guía-de-inicio-rápido)
+
+</div>
+
+---
+
+## 📋 Propósito
+
+Este repositorio alberga la plataforma oficial de **Gestión de Citas Médicas** del Hospital Local de Puerto López. El proyecto nace con la misión de **democratizar y agilizar el acceso a los servicios de salud**, permitiendo a los pacientes:
+
+*   📍 **Gestionar** sus citas médicas desde cualquier lugar y en cualquier momento.
+*   👨‍⚕️ **Consultar** la disponibilidad de especialistas de manera inmediata.
+*   📉 **Reducir** las barreras administrativas y los tiempos de espera presenciales.
+*   🔐 **Garantizar** un manejo organizado y eficiente de la información del paciente.
 
 ---
 
 ## 🌟 Características Principales
 
-- **📅 Agenda Inteligente:** Facilita la búsqueda y reserva de citas con diversos especialistas.
-- **🖥️ Panel de Control:** Espacio personalizado para que los pacientes gestionen su información y citas activas.
-- **📱 Experiencia Multiplataforma:** Interfaz optimizada para un uso fluido tanto en computadoras de escritorio como en dispositivos móviles.
-- **🚀 Eficiencia Operativa:** Reduce los tiempos de espera y simplifica los procesos administrativos del hospital.
+*   🚀 **Interfaz Intuitiva:** Navegación sencilla diseñada para usuarios de todas las edades.
+*   📅 **Agenda Digital:** Sistema dinámico para el registro y seguimiento de consultas médicas.
+*   👤 **Perfil de Usuario:** Panel personalizado para el control total de las citas programadas.
+*   ⚡ **Rendimiento Optimizado:** Carga rápida y diseño responsivo para una experiencia fluida en dispositivos móviles y escritorio.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Backend:** [Flask](https://flask.palletsprojects.com/) (Python)
-- **Base de Datos:** SQLite con [SQLAlchemy](https://www.sqlalchemy.org/)
-- **Frontend:** HTML5, CSS3 y Jinja2 Templates
+La arquitectura del sistema se basa en tecnologías robustas y escalables:
+
+*   **Backend:** Potenciado por **Flask**, un microframework flexible y potente.
+*   **Base de Datos:** Gestión de datos confiable mediante **SQLite** y **SQLAlchemy ORM**.
+*   **Template Engine:** Renderizado dinámico y seguro con **Jinja2**.
 
 ---
 
 ## 🚀 Guía de Inicio Rápido
 
-Para poner en marcha la plataforma en su entorno local, siga estas instrucciones:
+Para desplegar la plataforma en su entorno local, siga estos pasos:
 
-1. **Preparar el entorno:**
-   ```bash
-   git clone https://github.com/tu-usuario/university-app.git
-   cd university-app
-   python -m venv venv
-   source venv/bin/activate
-   ```
+### 1. Preparación del Entorno
+```bash
+git clone https://github.com/tu-usuario/hospital-puerto-lopez.git
+cd hospital-puerto-lopez
+python -m venv venv
+source venv/bin/activate
+```
 
-2. **Instalación:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Instalación de Dependencias
+```bash
+pip install -r requirements.txt
+```
 
-3. **Ejecución:**
-   ```bash
-   python app.py
-   ```
-
----
-
-## 🤝 Cómo Contribuir
-
-Valoramos enormemente las ideas que ayuden a mejorar el acceso a la salud:
-1. Realice un Fork del repositorio.
-2. Desarrolle su propuesta en una rama independiente (`git checkout -b feature/nueva-idea`).
-3. Envíe sus cambios mediante un Pull Request detallado.
+### 3. Ejecución del Servidor
+```bash
+python app.py
+```
 
 ---
+
+<div align="center">
 
 **Hecho por Cyberdark by Whoami-labs.com**
+
+</div>
